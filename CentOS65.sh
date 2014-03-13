@@ -16,8 +16,10 @@ febootstrap \
   centos ${tmpdir} $MIRROR_URL -u $MIRROR_URL_UPDATES
 
 febootstrap-run ${tmpdir} -- bash -c 'echo "NETWORKING=yes" > /etc/sysconfig/network'
+febootstrap-run ${tmpdir} -- bash -c 'echo "HOSTNAME=localhost.localdomain" >> /etc/sysconfig/network'
 febootstrap-run ${tmpdir} -- bash -c 'touch /etc/resolv.conf'
 febootstrap-run ${tmpdir} -- bash -c 'touch /sbin/init'
+febootstrap-run ${tmpdir} -- bash -c 'ln -sf /bin/true /sbin/initctl'
 febootstrap-run ${tmpdir} -- bash -c 'yum clean all'
 febootstrap-run ${tmpdir} -- bash -c 'rm -rf /usr/{{lib,share}/locale,{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive}'
 febootstrap-run ${tmpdir} -- bash -c 'rm -rf /usr/share/{man,doc,info,gnome/help}'
