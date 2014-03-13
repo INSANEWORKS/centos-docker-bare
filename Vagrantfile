@@ -3,8 +3,7 @@
 
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "INSANEWORKS-CentOS-6.5-x86_64-v20140306"
-  config.vm.box_url = "http://www.insaneworks.co.jp/pub/boxes/INSANEWORKS-CentOS-6.5-x86_64-v20140306.box"
+  config.vm.box = "insaneworks/centos"
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks","site-cookbooks"
     chef.add_recipe "docker"
