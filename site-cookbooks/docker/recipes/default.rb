@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-include_recipe "yum::epel"
+include_recipe 'yum-epel'
 
 %w{docker-io}.each do |p|
   package p do

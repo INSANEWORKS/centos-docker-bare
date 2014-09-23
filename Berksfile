@@ -1,2 +1,2 @@
-site :opscode
-  cookbook 'yum'
+source "https://supermarket.getchef.com"
+  cookbook 'yum-epel'
