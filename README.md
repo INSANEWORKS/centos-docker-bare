@@ -7,6 +7,6 @@ docker-build
 vagrant up
 vagrant ssh
 sudo -i
-/vagrant/CentOS65.sh
-xzcat centos65.tar.xz | docker import - local/centos65:latest
+/vagrant/CentOS6.sh
+xzcat centos6.tar.xz | docker import - local/centos6:latest
 ```

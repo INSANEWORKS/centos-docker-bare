@@ -1,4 +1,4 @@
 FROM scratch
 MAINTAINER Kota Shiratsuka <kota@insaneworks.co.jp>
 
-ADD centos65.tar.xz /
+ADD centos6.tar.xz /

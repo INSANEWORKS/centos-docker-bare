@@ -3,8 +3,8 @@
 tmpdir=$( mktemp -d )
 trap "echo removing ${tmpdir}; rm -rf ${tmpdir}" EXIT
 
-MIRROR_URL="http://ftp.iij.ad.jp/pub/linux/centos/6.5/os/x86_64"
-MIRROR_URL_UPDATES="http://ftp.iij.ad.jp/pub/linux/centos/6.5/updates/x86_64"
+MIRROR_URL="http://ftp.iij.ad.jp/pub/linux/centos/6/os/x86_64"
+MIRROR_URL_UPDATES="http://ftp.iij.ad.jp/pub/linux/centos/6/updates/x86_64"
 
 yum install -y febootstrap xz
 
@@ -28,4 +28,4 @@ febootstrap-run ${tmpdir} -- bash -c 'rm -rf /usr/share/i18n'
 febootstrap-run ${tmpdir} -- bash -c 'rm -rf /sbin/sln'
 febootstrap-run ${tmpdir} -- bash -c 'rm -rf /etc/ld.so.cache'
 febootstrap-run ${tmpdir} -- bash -c 'rm -rf /var/cache/ldconfig/*'
-febootstrap-run ${tmpdir} -- tar -cf - . | xz > centos65.tar.xz
+febootstrap-run ${tmpdir} -- tar -cf - . | xz > centos6.tar.xz
