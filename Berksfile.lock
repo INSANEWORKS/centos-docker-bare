@@ -2,6 +2,6 @@ DEPENDENCIES
   yum-epel
 
 GRAPH
-  yum (3.3.2)
-  yum-epel (0.5.1)
-    yum (~> 3.0)
+  yum (3.11.0)
+  yum-epel (0.7.0)
+    yum (>= 3.6.3)

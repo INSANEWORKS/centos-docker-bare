@@ -6,7 +6,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "insaneworks/centos"
   config.vm.provision :chef_zero do |chef|
     chef.cookbooks_path = "cookbooks","site-cookbooks"
+    chef.nodes_path = "nodes"
     chef.add_recipe "docker"
   end
-  config.vm.provision :shell, inline: "/vagrant/CentOS65.sh && cat centos65.tar.xz > /vagrant/centos65.tar.xz"
+  config.vm.provision :shell, inline: <<-EOS
+    /vagrant/mkimage-yum.sh insaneworks/centos
+  EOS
 end
