@@ -104,6 +104,8 @@ rm -rf "$target"/usr/share/{man,doc,info,gnome/help}
 rm -rf "$target"/usr/share/cracklib
 #  i18n
 rm -rf "$target"/usr/share/i18n
+#  firmware / source
+rm -rf "$target"/lib/firmware "$target"/lib/modules
 #  yum cache
 rm -rf "$target"/var/cache/yum
 mkdir -p --mode=0755 "$target"/var/cache/yum
